@@ -31,5 +31,20 @@ public class Senha {
         }
         return false;
     }
+    public Boolean possuiNumero(){
+        for (char ch: this.valor.toCharArray()) {
+            int charCode = (int) ch;
+            if( charCode >= 48 && charCode <= 57){
+                return true;
+            }
+        }
+        return false;
+    }
+    public Boolean ehValida(){
+        if( this.tamanhoSeguro() && this.possuiMaiusculaMinuscula() && this.possuiNumero() ){
+            return true;
+        }
+        return false;
+    }
 
 }
